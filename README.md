@@ -3,7 +3,7 @@ This is a C++ class template for a crafting system that allows you to manage ite
 
 ## Example
 
-'''cpp
+```cpp
 namespace Item
 {
     enum Type:unsigned char
@@ -37,13 +37,13 @@ int main()
 }
 
 
-'''
+```
 
 
 ## Add Item
 These four AddItem functions allow for the addition of items to the crafting system. They can add a single item, a specified quantity of an item, a list of items, or a list of item-quantity pairs. Each function handles the addition process efficiently.
 
-'''cpp
+```cpp
     CraftingSystem craftingSystem;
     craftingSystem.AddItem(Item::Wood);
     craftingSystem.AddItem(Item::Wood, 5);
@@ -51,19 +51,17 @@ These four AddItem functions allow for the addition of items to the crafting sys
     craftingSystem.AddItem({Item::Wood, Item::Iron});
     craftingSystem.AddItem({{Item::Wood, 15}, {Item::Iron, 20}});
 
-'''
+```
 
 ## Add Conditions
 This line of code sets up crafting conditions for creating a "Hammer" in the crafting system, specifying that 2 units of "Iron," 5 units of "Stone," and 10 units of "Wood" are required for crafting. If these conditions are not met, crafting the "Hammer" will not be possible.
-'''cpp
+```cpp
 
     craftingSystem.AddConditions(Item::Hammer, {{Item::Iron, 2,}, {Item::Stone, 5}, {Item::Wood, 10}});
 
-''' 
+``` 
 ## Remove Item 
-
-
-'''cpp
+```cpp
 
     CraftingSystem craftingSystem;
     craftingSystem.AddItem(Item::Wood,5);
@@ -71,7 +69,7 @@ This line of code sets up crafting conditions for creating a "Hammer" in the cra
     craftingSystem.RemoveItem(Item::Wood); //1
     cout<<craftingSystem.GetItemCount(Item::Wood); //1
 
-'''
+```
 
 
 
